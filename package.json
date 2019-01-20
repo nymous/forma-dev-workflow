@@ -1,0 +1,22 @@
+{
+  "name": "forma-dev-workflow",
+  "version": "1.0.0",
+  "description": "Une présentation d'un workflow de développement moderne.",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d deck"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nymous/forma-dev-workflow.git"
+  },
+  "author": "Thomas Gaudin <thomas.gaudin@centraliens-lille.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nymous/forma-dev-workflow/issues"
+  },
+  "homepage": "https://github.com/nymous/forma-dev-workflow#readme",
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}
