@@ -1,0 +1,44 @@
+version: "3.2"
+
+services:
+  markdeck:
+    image: "arne/markdeck-pandoc:0.34"
+    user: "$MARKDECK_USER"
+    volumes:
+      - ./:/source:ro
+      - ./deck:/target
+
+  web:
+    image: "arne/markdeck-liveserver:0.2"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./deck:/target
+    depends_on:
+      - markdeck
+
+  pdf:
+    image: "arne/markdeck-decktape:0.5"
+    volumes:
+      - ./deck:/slides
+    shm_size: 1G
+    depends_on:
+      - markdeck
+      - web
+
+  standalone:
+    image: "arne/markdeck-standalone:0.2"
+    volumes:
+      - ./deck:/target
+    depends_on:
+      - web
+
+  helper:
+    image: "arne/markdeck-helper:0.2"
+    ports:
+      - "8081:8081"
+
+  a2sketch:
+    image: "arne/a2sketch:0.11"
+    volumes:
+      - ./a2s-custom-types:/custom-types:ro
