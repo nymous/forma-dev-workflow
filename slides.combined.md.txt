@@ -1,0 +1,142 @@
+---
+title: Un workflow de développement moderne
+pdf: modern-dev-workflow.pdf
+slideNumber: true
+controls: true
+controlsLayout: edges
+---
+
+# Un workflow de développement moderne {bg=#2C3E50EE x=0 y=0 .light-on-dark}
+
+<small>Thomas 'Nymous' Gaudin • 2019-01</small>
+
+<div class="intro">
+[![](fab fa-github)](https://github.com/nymous)
+[![](fas fa-globe)](https://nymous.io)
+[![](fas fa-envelope)](email:t.goudine@gmail.com)
+</div>
+
+# Nymous
+
+* C'est moi 😉
+* Président du Rézoléo 2015-2016
+* Élève en EBM 2017-2018
+* Consultant chez Extia, en mission DevOps à Adeo
+* [![](fab fa-github) https://github.com/nymous](https://github.com/nymous)
+
+# Plan
+
+1. Quoi ? Pourquoi ?
+2. Gestion de version
+3. Tests
+4. Automatisation
+5. Documentation
+6. Déploiement
+
+# 1. Quoi ? Pourquoi ? {bg=#2C3E50EE}
+
+# 1.1 Quoi ?
+
+* Présentation des outils utiles à tout projet de dev moderne
+
+* Intégration de ces outils dans une chaîne
+
+* Projet squelette
+
+# 1.2 Pourquoi ?
+
+* Travail plus fluide
+* Cycle *développement => mise en production* raccourci
+  * => feedback rapide
+* Moins peur de faire des erreurs
+  * petits incréments faciles à corriger/annuler
+  * un workflow qui réduit les erreurs
+  * la MEP devient la routine
+* Process automatisé
+  * => moins d'erreurs humaines
+
+# 2. Gestion de version {bg=#2C3E50EE}
+
+# 2.1 Pourquoi ?
+
+Pourquoi faire de la gestion de version ?
+
+* Retour en arrière
+* Expérimentation possible
+* Travail à plusieurs en parallèle
+
+# 2.1 Outils
+
+Outils de collaboration :
+
+* [GitHub](https://github.com/)
+* [Gitlab](https://gitlab.com/)
+* [Bitbucket](https://bitbucket.org/)
+
+# 2.2 Bonnes pratiques
+
+* Branches (plusieurs workflows possibles)
+  * tout dans master 🤮
+  * gitflow
+  * master + branches de feature
+* Branche master protégée
+* Pull requests & code review
+
+# Tests {bg=#2C3E50EE}
+
+# 3.1 Pourquoi ?
+
+* S'assurer que le code fait ce qui est prévu
+  * Tests unitaires
+* S'assurer que des bugs corrigés ne reviennent pas
+  * Tests de non-régression
+* S'assurer de la qualité et sécurité du code
+  * Outils d'analyse statique, linters
+* Avoir confiance pendant un refactoring
+  * Si tests vert => pas de changement de comportement
+
+# 3.2 Outils
+
+* Linter/Formatage :
+  * [ESLint](https://eslint.org/)
+  * [Prettier](https://prettier.io/)
+* Tests :
+  * [Jest](https://jestjs.io/)
+  * [Mocha](https://mochajs.org/)
+  * [ava](https://github.com/avajs/ava)
+
+# 3.3 Services
+
+* Code coverage :
+  * [Codacy](https://www.codacy.com/)
+  * [Codecov](https://codeclimate.com/quality/)
+  * [CodeClimate](https://codeclimate.com/quality/)
+
+# Automatisation {bg=#2C3E50EE}
+
+# 4.1 Pourquoi ?
+
+* Réduire les erreurs humaines
+* Forcer les bonnes pratiques
+* Tâche répétitive => automatisation => gain de temps
+
+# 4.2 Outils
+
+* [Travis](https://travis-ci.com/)
+* [Circle CI](https://circleci.com/)
+* [Gitlab CI](https://about.gitlab.com/product/continuous-integration/)
+* [Codeship](https://codeship.com/)
+* [Drone CI](https://drone.io/)
+
+# Documentation {bg=#2C3E50EE}
+
+# 5. Documentation
+
+ApiDoc, Sawgger
+
+# Déploiement {bg=#2C3E50EE}
+
+# 6. Déploiement
+
+Docker
+

@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+    <title>Un workflow de développement moderne</title>
+
+    <meta name="description" content="Un workflow de développement moderne" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="stylesheet" href="assets/3rdparty/reveal.js/css/reveal.css" />
+    <link rel="stylesheet" href="assets/3rdparty/reveal.js/css/theme/simple.css" id="theme" />
+
+    <link rel="stylesheet" href="assets/markdeck/styles/zenburn.css" />
+
+        <link rel="stylesheet" href="assets/markdeck/css/markdeck.revealjs.css" />
+    <link rel="stylesheet" href="assets/css/slides.css" />
+
+    <script>
+        window.pdf_render = window.location.search.match(/render=pdf/gi) != null;
+        if (window.pdf_render) {
+            document.write('<link rel="stylesheet" href="assets/css/render-pdf.css" type="text/css">');
+        }
+    </script>
+
+    <link href="assets/css/rerendering.css" rel="stylesheet"></link>
+
+
+</head>
+<body>
+
+
+    <div class="rerendering-message"><h1>R E R E N D E R I N G</h1></div>
+    <div class="markdeck-logo"><a href="https://github.com/arnehilmann/markdeck">powered by markdeck</a></div>
+
+    <div class="reveal">
+        <div class="slides">
+
+<section id="un-workflow-de-développement-moderne" class="level1 light-on-dark" data-bg="#2C3E50EE" data-x="0" data-y="0" data-background="#2C3E50EE">
+<h1>Un workflow de développement moderne</h1>
+<p><small>Thomas ‘Nymous’ Gaudin • 2019-01</small></p>
+<div class="intro">
+<p><a href="https://github.com/nymous"><i class='fab fa-github'></i></a>
+<a href="https://nymous.io"><i class='fas fa-globe'></i></a>
+<a href="email:t.goudine@gmail.com"><i class='fas fa-envelope'></i></a></p>
+</div>
+</section>
+<section id="nymous" class="level1">
+<h1>Nymous</h1>
+<ul>
+<li>C’est moi <img src="assets/markdeck/emojis/1f609.png" alt="😉" class="emoji" /></li>
+<li>Président du Rézoléo 2015-2016</li>
+<li>Élève en EBM 2017-2018</li>
+<li>Consultant chez Extia, en mission DevOps à Adeo</li>
+<li><a href="https://github.com/nymous"><i class='fab fa-github'></i> https://github.com/nymous</a></li>
+</ul>
+</section>
+<section id="plan" class="level1">
+<h1>Plan</h1>
+<ol type="1">
+<li>Quoi ? Pourquoi ?</li>
+<li>Gestion de version</li>
+<li>Tests</li>
+<li>Automatisation</li>
+<li>Documentation</li>
+<li>Déploiement</li>
+</ol>
+</section>
+<section id="quoi-pourquoi" class="level1" data-bg="#2C3E50EE" data-background="#2C3E50EE">
+<h1>1. Quoi ? Pourquoi ?</h1>
+</section>
+<section id="quoi" class="level1">
+<h1>1.1 Quoi ?</h1>
+<ul>
+<li><p>Présentation des outils utiles à tout projet de dev moderne</p></li>
+<li><p>Intégration de ces outils dans une chaîne</p></li>
+<li><p>Projet squelette</p></li>
+</ul>
+</section>
+<section id="pourquoi" class="level1">
+<h1>1.2 Pourquoi ?</h1>
+<ul>
+<li>Travail plus fluide</li>
+<li>Cycle <em>développement =&gt; mise en production</em> raccourci
+<ul>
+<li>=&gt; feedback rapide</li>
+</ul></li>
+<li>Moins peur de faire des erreurs
+<ul>
+<li>petits incréments faciles à corriger/annuler</li>
+<li>un workflow qui réduit les erreurs</li>
+<li>la MEP devient la routine</li>
+</ul></li>
+<li>Process automatisé
+<ul>
+<li>=&gt; moins d’erreurs humaines</li>
+</ul></li>
+</ul>
+</section>
+<section id="gestion-de-version" class="level1" data-bg="#2C3E50EE" data-background="#2C3E50EE">
+<h1>2. Gestion de version</h1>
+</section>
+<section id="pourquoi-1" class="level1">
+<h1>2.1 Pourquoi ?</h1>
+<p>Pourquoi faire de la gestion de version ?</p>
+<ul>
+<li>Retour en arrière</li>
+<li>Expérimentation possible</li>
+<li>Travail à plusieurs en parallèle</li>
+</ul>
+</section>
+<section id="outils" class="level1">
+<h1>2.1 Outils</h1>
+<p>Outils de collaboration :</p>
+<ul>
+<li><a href="https://github.com/">GitHub</a></li>
+<li><a href="https://gitlab.com/">Gitlab</a></li>
+<li><a href="https://bitbucket.org/">Bitbucket</a></li>
+</ul>
+</section>
+<section id="bonnes-pratiques" class="level1">
+<h1>2.2 Bonnes pratiques</h1>
+<ul>
+<li>Branches (plusieurs workflows possibles)
+<ul>
+<li>tout dans master 🤮</li>
+<li>gitflow</li>
+<li>master + branches de feature</li>
+</ul></li>
+<li>Branche master protégée</li>
+<li>Pull requests &amp; code review</li>
+</ul>
+</section>
+<section id="tests" class="level1" data-bg="#2C3E50EE" data-background="#2C3E50EE">
+<h1>Tests</h1>
+</section>
+<section id="pourquoi-2" class="level1">
+<h1>3.1 Pourquoi ?</h1>
+<ul>
+<li>S’assurer que le code fait ce qui est prévu
+<ul>
+<li>Tests unitaires</li>
+</ul></li>
+<li>S’assurer que des bugs corrigés ne reviennent pas
+<ul>
+<li>Tests de non-régression</li>
+</ul></li>
+<li>S’assurer de la qualité et sécurité du code
+<ul>
+<li>Outils d’analyse statique, linters</li>
+</ul></li>
+<li>Avoir confiance pendant un refactoring
+<ul>
+<li>Si tests vert =&gt; pas de changement de comportement</li>
+</ul></li>
+</ul>
+</section>
+<section id="outils-1" class="level1">
+<h1>3.2 Outils</h1>
+<ul>
+<li>Linter/Formatage :
+<ul>
+<li><a href="https://eslint.org/">ESLint</a></li>
+<li><a href="https://prettier.io/">Prettier</a></li>
+</ul></li>
+<li>Tests :
+<ul>
+<li><a href="https://jestjs.io/">Jest</a></li>
+<li><a href="https://mochajs.org/">Mocha</a></li>
+<li><a href="https://github.com/avajs/ava">ava</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="services" class="level1">
+<h1>3.3 Services</h1>
+<ul>
+<li>Code coverage :
+<ul>
+<li><a href="https://www.codacy.com/">Codacy</a></li>
+<li><a href="https://codeclimate.com/quality/">Codecov</a></li>
+<li><a href="https://codeclimate.com/quality/">CodeClimate</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="automatisation" class="level1" data-bg="#2C3E50EE" data-background="#2C3E50EE">
+<h1>Automatisation</h1>
+</section>
+<section id="pourquoi-3" class="level1">
+<h1>4.1 Pourquoi ?</h1>
+<ul>
+<li>Réduire les erreurs humaines</li>
+<li>Forcer les bonnes pratiques</li>
+<li>Tâche répétitive =&gt; automatisation =&gt; gain de temps</li>
+</ul>
+</section>
+<section id="outils-2" class="level1">
+<h1>4.2 Outils</h1>
+<ul>
+<li><a href="https://travis-ci.com/">Travis</a></li>
+<li><a href="https://circleci.com/">Circle CI</a></li>
+<li><a href="https://about.gitlab.com/product/continuous-integration/">Gitlab CI</a></li>
+<li><a href="https://codeship.com/">Codeship</a></li>
+<li><a href="https://drone.io/">Drone CI</a></li>
+</ul>
+</section>
+<section id="documentation" class="level1" data-bg="#2C3E50EE" data-background="#2C3E50EE">
+<h1>Documentation</h1>
+</section>
+<section id="documentation-1" class="level1">
+<h1>5. Documentation</h1>
+<p>ApiDoc, Sawgger</p>
+</section>
+<section id="déploiement" class="level1" data-bg="#2C3E50EE" data-background="#2C3E50EE">
+<h1>Déploiement</h1>
+</section>
+<section id="déploiement-1" class="level1">
+<h1>6. Déploiement</h1>
+<p>Docker</p>
+</section>
+
+        </div>
+    </div>
+
+    <script src="assets/3rdparty/jquery.js"></script>
+
+    <script src="assets/3rdparty/reveal.js/lib/js/head.min.js"></script>
+    <script src="assets/3rdparty/reveal.js/js/reveal.js"></script>
+
+    <script>
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: 'true',
+            controlsTutorial: '',
+            controlsLayout: 'edges',
+            controlsBackArrows: 'faded',
+            progress: 'true',
+            defaultTiming: '120',
+            slideNumber: 'true',
+            history: 'true',
+            keyboard: 'true',
+            overview: 'true',
+            center: 'true',
+            touch: 'true',
+            loop: '',
+            rtl: '',
+            shuffle: '',
+            fragments: 'true',
+            embedded: '',
+            help: 'true',
+            showNotes: '',
+            autoPlayMedia: 'null',
+
+            autoSlide: (window.pdf_render) ? 0 : 0,
+
+            autoSlideStoppable: 'true',
+            autoSlideMethod: 'Reveal.navigateNext',
+            mouseWheel: '',
+            hideAddressBar: 'true',
+            previewLinks: '',
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+
+            theme: 'simple',
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: 'assets/3rdparty/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: 'assets/markdeck/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: 'assets/3rdparty/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                { src: 'assets/3rdparty/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+            ]
+        });
+    </script>
+
+    
+    <script src="assets/markdeck/revealjs-helper.js"></script>
+    <script>
+        flushleft(".slides .flushleft");
+    </script>
+
+
+</body>
+</html>
