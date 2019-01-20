@@ -10,5 +10,4 @@
 
 <p></p>
 
-* [Traefik](https://traefik.io/)
-* [Watchtower](https://github.com/v2tec/watchtower)
+* [Traefik](https://traefik.io/) + [Watchtower](https://github.com/v2tec/watchtower)
