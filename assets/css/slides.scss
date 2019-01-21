@@ -73,6 +73,7 @@
 
 .reveal a {
     color: inherit;
+    text-decoration: underline dotted;
 
     &:hover {
         color: inherit;
@@ -91,3 +92,18 @@
 
 .sea-gradient .reveal { @include sea-gradient; }
 .sky-gradient-13 .reveal { @include sky-gradient-13; }
+
+.custom-image {
+    height: 55vh;
+
+    p {
+        width: 100%;
+        height: 100%;
+
+        img, svg {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

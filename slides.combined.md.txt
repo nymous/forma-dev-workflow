@@ -8,11 +8,14 @@ controlsLayout: edges
 
 # Un workflow de développement moderne {bg=#2C3E50EE x=0 y=0 .light-on-dark}
 
-<small>Thomas 'Nymous' Gaudin • 2019-01</small>
+<small>Thomas 'Nymous' Gaudin • 22/01/2019</small>
+
+<small>[https://nymous.github.io/forma-dev-workflow](https://nymous.github.io/forma-dev-workflow){target=_blank}</small>
 
 <div class="intro">
-[![](fab fa-github)](https://github.com/nymous)
-[![](fas fa-globe)](https://nymous.io)
+[![](fab fa-github)](https://github.com/nymous){target=_blank}
+[![](fab fa-twitter)](https://twitter.com/nymousIO){target=_blank}
+[![](fas fa-globe)](https://nymous.io){target=_blank}
 [![](fas fa-envelope)](email:t.goudine@gmail.com)
 </div>
 
@@ -55,6 +58,31 @@ controlsLayout: edges
 * Process automatisé
   * => moins d'erreurs humaines
 
+# 1.3 Le workflow
+
+<div class="custom-image">
+
+```{.render_dot}
+digraph {
+
+code [ label="Code code code..."];
+pr [ label="Ouvrir une pull request" ];
+code_review [ label="Relire le code 👀" ];
+pr_accept [ label="Changements acceptés ! 💪" ];
+pr_reject [ label="Changements refusés 😢" ];
+tests [ label="Lint, tests... 🙏" ];
+tests_accept [ label="Tests verts !" ];
+tests_reject [ label="Tests rouge 😡" ];
+docker [ label="Construction de l'image Docker 🐋" ];
+deploy [ label="Déploiement en production ! 🚀" ];
+
+code -> pr -> code_review -> pr_accept -> tests -> tests_accept -> docker -> deploy -> code
+code_review -> pr_reject -> code
+tests -> tests_reject -> code
+}
+```
+</div>
+
 # 2. Gestion de version {bg=#2C3E50EE}
 
 # 2.1 Pourquoi ?
@@ -77,10 +105,16 @@ Outils de collaboration :
 
 * Branches (plusieurs workflows possibles)
   * tout dans master 🤮
-  * gitflow
+  * [gitflow](https://nvie.com/posts/a-successful-git-branching-model/)
   * master + branches de feature
 * Branche master protégée
-* Pull requests & code review
+* Pull/merge requests & code review
+
+# 2.3 Gitflow
+
+<div class="custom-image">
+![](./assets/img/gitflow.png)
+</div>
 
 # Tests {bg=#2C3E50EE}
 
@@ -139,7 +173,7 @@ Outils de collaboration :
 # 5.2 Outils
 
 * [ApiDoc](http://apidocjs.com/)
-* [Sawgger](https://editor.swagger.io/)
+* [Swagger](https://editor.swagger.io/)
 
 # Déploiement {bg=#2C3E50EE}
 
@@ -154,4 +188,10 @@ Outils de collaboration :
 <p></p>
 
 * [Traefik](https://traefik.io/) + [Watchtower](https://github.com/v2tec/watchtower)
+
+# Questions ?
+
+[`https://nymous.github.io/forma-dev-workflow`{.render_qr}](https://nymous.github.io/forma-dev-workflow)
+
+[https://nymous.github.io/forma-dev-workflow](https://nymous.github.io/forma-dev-workflow)
 
