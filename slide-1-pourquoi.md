@@ -22,25 +22,42 @@
 
 # 1.3 Le workflow
 
-<div class="custom-image">
+<div class="custom-svg">
 
-```{.render_dot}
-digraph {
+```{.render_plantuml args="-Sbackgroundcolor=transparent -SdefaultFontSize=24 -SdefaultFontName=Raleway"}
+@startuml
 
-code [ label="Code code code..."];
-pr [ label="Ouvrir une pull request" ];
-code_review [ label="Relire le code 👀" ];
-pr_accept [ label="Changements acceptés ! 💪" ];
-pr_reject [ label="Changements refusés 😢" ];
-tests [ label="Lint, tests... 🙏" ];
-tests_accept [ label="Tests verts !" ];
-tests_reject [ label="Tests rouge 😡" ];
-docker [ label="Construction de l'image Docker 🐋" ];
-deploy [ label="Déploiement en production ! 🚀" ];
+start
 
-code -> pr -> code_review -> pr_accept -> tests -> tests_accept -> docker -> deploy -> code
-code_review -> pr_reject -> code
-tests -> tests_reject -> code
-}
+:Code code code...;
+:Ouvrir une pull request;
+(A)
+:Relire le code 👀;
+if (PR acceptée ?) then (oui)
+  :Changements acceptés 💪;
+else (non)
+  :Changements refusés 😢;
+  :Recommencer à coder...;
+  (A)
+  detach
+endif
+
+:Lint, tests;
+if (Tests OK ?) then (oui)
+  :Tests verts ! ✔;
+else (non)
+  :Tests rouge 😡;
+  :Recommencer à coder...;
+  (A)
+  detach
+endif
+
+:Construction de l'image Docker 🐋;
+:Déploiement en (pré-)production ! 🚀;
+
+end
+
+@enduml
 ```
+
 </div>
