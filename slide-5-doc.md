@@ -9,4 +9,4 @@
 # 5.2 Outils
 
 * [ApiDoc](http://apidocjs.com/)
-* [Sawgger](https://editor.swagger.io/)
+* [Swagger](https://editor.swagger.io/)
