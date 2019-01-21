@@ -107,3 +107,16 @@
         }
     }
 }
+
+.custom-svg {
+    height: 55vh;
+
+    p {
+        width: 100%;
+        height: 100%;
+
+        img, svg {
+            transform: scale(0.6) translateY(-35%);
+        }
+    }
+}

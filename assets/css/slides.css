@@ -94,3 +94,11 @@ pre.nohighlight code {
       object-fit: contain;
       width: 100%;
       height: 100%; }
+
+.custom-svg {
+  height: 55vh; }
+  .custom-svg p {
+    width: 100%;
+    height: 100%; }
+    .custom-svg p img, .custom-svg p svg {
+      transform: scale(0.6) translateY(-35%); }

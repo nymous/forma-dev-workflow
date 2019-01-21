@@ -60,27 +60,44 @@ controlsLayout: edges
 
 # 1.3 Le workflow
 
-<div class="custom-image">
+<div class="custom-svg">
 
-```{.render_dot}
-digraph {
+```{.render_plantuml args="-Sbackgroundcolor=transparent -SdefaultFontSize=24 -SdefaultFontName=Raleway"}
+@startuml
 
-code [ label="Code code code..."];
-pr [ label="Ouvrir une pull request" ];
-code_review [ label="Relire le code 👀" ];
-pr_accept [ label="Changements acceptés ! 💪" ];
-pr_reject [ label="Changements refusés 😢" ];
-tests [ label="Lint, tests... 🙏" ];
-tests_accept [ label="Tests verts !" ];
-tests_reject [ label="Tests rouge 😡" ];
-docker [ label="Construction de l'image Docker 🐋" ];
-deploy [ label="Déploiement en production ! 🚀" ];
+start
 
-code -> pr -> code_review -> pr_accept -> tests -> tests_accept -> docker -> deploy -> code
-code_review -> pr_reject -> code
-tests -> tests_reject -> code
-}
+:Code code code...;
+:Ouvrir une pull request;
+(A)
+:Relire le code 👀;
+if (PR acceptée ?) then (oui)
+  :Changements acceptés 💪;
+else (non)
+  :Changements refusés 😢;
+  :Recommencer à coder...;
+  (A)
+  detach
+endif
+
+:Lint, tests;
+if (Tests OK ?) then (oui)
+  :Tests verts ! ✔;
+else (non)
+  :Tests rouge 😡;
+  :Recommencer à coder...;
+  (A)
+  detach
+endif
+
+:Construction de l'image Docker 🐋;
+:Déploiement en (pré-)production ! 🚀;
+
+end
+
+@enduml
 ```
+
 </div>
 
 # 2. Gestion de version {bg=#2C3E50EE}
@@ -100,23 +117,37 @@ Outils de collaboration :
 * [GitHub](https://github.com/)
 * [Gitlab](https://gitlab.com/)
 * [Bitbucket](https://bitbucket.org/)
+* [Gogs](https://gogs.io/)
 
 # 2.2 Bonnes pratiques
 
-* Branches (plusieurs workflows possibles)
+* Branches, plusieurs workflows possibles :
   * tout dans master 🤮
   * [gitflow](https://nvie.com/posts/a-successful-git-branching-model/)
   * master + branches de feature
-* Branche master protégée
+  * n'importe quelle combinaison de tout ça
 * Pull/merge requests & code review
+* Branche master protégée
+
+# 2.2 Bonnes pratiques
+
+Messages de commit utiles !
+
+[![](./assets/img/xkcd_git_commit.png)](https://xkcd.com/1296/)
 
 # 2.3 Gitflow
 
 <div class="custom-image">
-![](./assets/img/gitflow.png)
+[![](./assets/img/gitflow.png)](https://nvie.com/posts/a-successful-git-branching-model/)
 </div>
 
-# Tests {bg=#2C3E50EE}
+# 2.4 GitHub Flow
+
+<div class="custom-image">
+[![](./assets/img/github_flow.png)](https://guides.github.com/introduction/flow/)
+</div>
+
+# 3. Tests {bg=#2C3E50EE}
 
 # 3.1 Pourquoi ?
 
@@ -146,7 +177,7 @@ Outils de collaboration :
   * [Codecov](https://codeclimate.com/quality/)
   * [CodeClimate](https://codeclimate.com/quality/)
 
-# Automatisation {bg=#2C3E50EE}
+# 4. Automatisation {bg=#2C3E50EE}
 
 # 4.1 Pourquoi ?
 
@@ -162,7 +193,7 @@ Outils de collaboration :
 * [Codeship](https://codeship.com/)
 * [Drone CI](https://drone.io/)
 
-# Documentation {bg=#2C3E50EE}
+# 5. Documentation {bg=#2C3E50EE}
 
 # 5.1 Pourquoi ?
 
@@ -175,7 +206,7 @@ Outils de collaboration :
 * [ApiDoc](http://apidocjs.com/)
 * [Swagger](https://editor.swagger.io/)
 
-# Déploiement {bg=#2C3E50EE}
+# 6. Déploiement {bg=#2C3E50EE}
 
 # 6. Déploiement
 
