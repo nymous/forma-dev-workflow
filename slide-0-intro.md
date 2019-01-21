@@ -8,11 +8,14 @@ controlsLayout: edges
 
 # Un workflow de développement moderne {bg=#2C3E50EE x=0 y=0 .light-on-dark}
 
-<small>Thomas 'Nymous' Gaudin • 2019-01</small>
+<small>Thomas 'Nymous' Gaudin • 22/01/2019</small>
+
+<small>[https://nymous.github.io/forma-dev-workflow](https://nymous.github.io/forma-dev-workflow){target=_blank}</small>
 
 <div class="intro">
-[![](fab fa-github)](https://github.com/nymous)
-[![](fas fa-globe)](https://nymous.io)
+[![](fab fa-github)](https://github.com/nymous){target=_blank}
+[![](fab fa-twitter)](https://twitter.com/nymousIO){target=_blank}
+[![](fas fa-globe)](https://nymous.io){target=_blank}
 [![](fas fa-envelope)](email:t.goudine@gmail.com)
 </div>
 

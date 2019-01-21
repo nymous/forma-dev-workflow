@@ -19,3 +19,28 @@
   * la MEP devient la routine
 * Process automatisé
   * => moins d'erreurs humaines
+
+# 1.3 Le workflow
+
+<div class="custom-image">
+
+```{.render_dot}
+digraph {
+
+code [ label="Code code code..."];
+pr [ label="Ouvrir une pull request" ];
+code_review [ label="Relire le code 👀" ];
+pr_accept [ label="Changements acceptés ! 💪" ];
+pr_reject [ label="Changements refusés 😢" ];
+tests [ label="Lint, tests... 🙏" ];
+tests_accept [ label="Tests verts !" ];
+tests_reject [ label="Tests rouge 😡" ];
+docker [ label="Construction de l'image Docker 🐋" ];
+deploy [ label="Déploiement en production ! 🚀" ];
+
+code -> pr -> code_review -> pr_accept -> tests -> tests_accept -> docker -> deploy -> code
+code_review -> pr_reject -> code
+tests -> tests_reject -> code
+}
+```
+</div>

@@ -20,7 +20,13 @@ Outils de collaboration :
 
 * Branches (plusieurs workflows possibles)
   * tout dans master 🤮
-  * gitflow
+  * [gitflow](https://nvie.com/posts/a-successful-git-branching-model/)
   * master + branches de feature
 * Branche master protégée
-* Pull requests & code review
+* Pull/merge requests & code review
+
+# 2.3 Gitflow
+
+<div class="custom-image">
+![](./assets/img/gitflow.png)
+</div>
